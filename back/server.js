@@ -3,8 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const path = require('path');
-const apiRoutes = require('./routes');
 
 const app = express();
 
@@ -21,7 +19,7 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost/catmash');
 const port = process.env.PORT || 8080;
 
-// Message
+// Message de test de la homepage
 app.get('/', (req, res) => res.send('Hello Catmash'));
 
 app.listen(port, () => {
