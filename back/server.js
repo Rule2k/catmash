@@ -1,4 +1,4 @@
-// Importation
+// Imports
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -12,7 +12,6 @@ const app = express();
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
-
 app.use(bodyParser.json());
 
 // Connection à mongoose
@@ -26,6 +25,7 @@ app.get('/', (req, res) => res.send('Hello Catmash'));
 // Utilisation des routes de l'API
 app.use('/api', apiRoutes);
 
+// Affichage d'un message dans la console pour s'assure du bon fonctionnement du serveur
 app.listen(port, () => {
   console.log(`Serveur sur le port ${port}`);
 });

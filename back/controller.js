@@ -2,8 +2,8 @@
 
 const cats = require('./model');
 
-// Actions permettant de récupérers les données de la BDD. L'action get va être exportée et utilisé dans le fichier routes.js par la suite. 
-// La fonction shuffleArray permet de randomiser l'ordre du tableau de data de la base de données.
+// Actions permettant de récupérer les données de la BDD. L'action get va être exportée et utilisé dans le fichier routes.js par la suite. 
+// La fonction shuffleArray permet de randomiser l'ordre du tableau de données issu de la base de données.
 // Par la suite, je slice le tableau avec 2 entrées de moins que la taille totale du tableau (au cas où le nombre de data évolue)
 // Après avoir configuré la route, l'API me renverra donc uniquement deux entrées (au lieu du tableau entier), choisies au hasard, que le front-end utilisera plus tard pour afficher les deux images de chats.
 
