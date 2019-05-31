@@ -9,7 +9,7 @@ const ajaxMiddleware = store => next => (action) => {
       axios.get(`${url}/cats`, {
       })
         .then((result) => {
-          store.dispatch(twoCatsReceived(result.data));
+          store.dispatch(twoCatsReceived(result.data.data));
         })
         .catch((error) => {
           console.log(error);
