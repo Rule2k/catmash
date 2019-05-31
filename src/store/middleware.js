@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOADING_HOMEPAGE, twoCatsReceived } from './reducer';
+import { LOADING_HOMEPAGE, twoCatsReceived, CAT_CLICKED } from './reducer';
 
 const url = 'http://localhost:8060/api';
 
@@ -14,6 +14,9 @@ const ajaxMiddleware = store => next => (action) => {
         .catch((error) => {
           console.log(error);
         });
+      break;
+    case CAT_CLICKED:
+      console.log(action.id);
       break;
     default:
       next(action);
