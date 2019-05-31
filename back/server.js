@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 const apiRoutes = require('./routes');
 
 const app = express();
@@ -19,6 +21,7 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost/catmash');
 const port = process.env.PORT || 8060;
 
+app.use(cors({ origin: 'http://localhost:8080' }));
 // Message de test de la homepage
 app.get('/', (req, res) => res.send('Hello Catmash'));
 
