@@ -13,7 +13,7 @@ const App = ({ cats }) => (
     <Segment>
       <Grid columns={2} relaxed="very">
         {cats.map(cat => (
-          <Grid.Column>
+          <Grid.Column key={cat.id}>
             <Cats cat={cat} key={cat.id} />
           </Grid.Column>
         ))}
