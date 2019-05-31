@@ -1,19 +1,24 @@
-/**
- * Npm import
- */
+// imports
 import React from 'react';
 
 import Cats from 'src/components/Cats';
+import { Divider, Grid, Image, Segment } from 'semantic-ui-react';
 import './app.scss';
 
-/**
- * Code
- */
+// Parcours le tableau cats issu de Redux, et génère un composant <Cats /> pour chaques itérations, en envoyant les détails de chaque entrée au composant enfant.
+
 const App = ({ cats }) => (
   <div id="app">
-    {cats.map(cat => (
-      <Cats cat={cat} />
-    ))}
+    <Segment>
+      <Grid columns={2} relaxed="very">
+        {cats.map(cat => (
+          <Grid.Column>
+            <Cats cat={cat} />
+          </Grid.Column>
+        ))}
+      </Grid>
+      <Divider vertical>ou</Divider>
+    </Segment>
   </div>
 );
 

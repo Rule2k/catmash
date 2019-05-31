@@ -1,8 +1,9 @@
 import React from 'react';
+import { Image } from 'semantic-ui-react';
 
 const Cats = ({ cat }) => (
   <div id="cats">
-    <img src={cat.url} alt="" />
+    <Image src={cat.url} width={600} height={600} circular centered  />
   </div>
 );
 
