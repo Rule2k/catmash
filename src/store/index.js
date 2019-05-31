@@ -1,26 +1,16 @@
-/*
- * Npm import
- */
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 
-/*
- * Local import
- */
-// Reducer
 import reducer from 'src/store/reducer';
+import middleware from './middleware';
 
-/*
- * Code
- */
+
 const devTools = [
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 ];
 
+const enhancers = compose(middleware, ...devTools);
 
 // createStore
-const store = createStore(reducer, ...devTools);
+const store = createStore(enhancers);
 
-/*
- * Export
- */
 export default store;
