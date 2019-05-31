@@ -1,20 +1,24 @@
-/**
- * Npm import
- */
 import React from 'react';
+import store from 'src/store/index';
 
-/**
- * Local import
- */
 import Cats from 'src/components/Cats';
+import { loadingHomePage } from 'src/store/reducer';
 import './app.scss';
 
 /**
  * Code
  */
-const App = () => (
-  <Cats />
-);
+class App extends React.Component {
+  componentDidMount() {
+    store.dispatch(loadingHomePage());
+  }
+
+  render() {
+    return (
+      <Cats />
+    );
+  }
+}
 
 /**
  * Export
