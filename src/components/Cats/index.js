@@ -1,6 +1,4 @@
-
 import React from 'react';
-
 
 const Cats = ({ cat }) => (
   <div id="cats">

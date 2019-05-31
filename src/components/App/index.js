@@ -3,20 +3,19 @@
  */
 import React from 'react';
 
-/**
- * Local import
- */
-import DisplayAppOrLoading from 'src/containers/DisplayAppOrLoading';
+import Cats from 'src/components/Cats';
 import './app.scss';
 
 /**
  * Code
  */
-const App = () => (
-  <DisplayAppOrLoading />
+const App = ({ cats }) => (
+  <div id="app">
+    {cats.map(cat => (
+      <Cats cat={cat} />
+    ))}
+  </div>
 );
 
-/**
- * Export
- */
+
 export default App;

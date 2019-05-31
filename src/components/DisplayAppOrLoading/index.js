@@ -1,12 +1,10 @@
 import React from 'react';
-import Cats from 'src/components/Cats';
+import App from 'src/components/App';
 import Loading from 'src/components/Loading';
 
 const DisplayAppOrLoading = ({ loading, cats }) => (
-  loading ? <Loading /> : cats.map(cat => (
-    <Cats cat={cat} key={cat.id} />
-  ))
-);
+  loading ? <Loading /> : <App cats={cats} />
 
+);
 
 export default DisplayAppOrLoading;
