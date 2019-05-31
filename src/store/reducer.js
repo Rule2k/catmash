@@ -12,6 +12,7 @@ const initialState = {
 
 const RECEIVED_TWO_RANDOM_CATS = 'RECEIVED_TWO_RANDOM_CATS';
 export const LOADING_HOMEPAGE = 'LOADING_HOMEPAGE';
+export const CAT_CLICKED = 'CAT_CLICKED';
 
 /**
  * Reducer
@@ -39,6 +40,11 @@ export const twoCatsReceived = data => ({
 
 export const loadingHomePage = () => ({
   type: LOADING_HOMEPAGE,
+});
+
+export const catHasBeenClicked = id => ({
+  type: CAT_CLICKED,
+  id,
 });
 
 export default reducer;

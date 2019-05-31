@@ -3,7 +3,7 @@ import { Image } from 'semantic-ui-react';
 
 const Cats = ({ cat }) => (
   <div id="cats">
-    <Image src={cat.url} width={600} height={600} circular centered  />
+    <Image src={cat.url} width={400} height={400} circular centered no-stretch />
   </div>
 );
 

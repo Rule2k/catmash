@@ -1,25 +1,23 @@
-/**
- * import : npm
- */
+// import
+
 import '@babel/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-/**
- * import : local
- */
+
 import store from 'src/store';
 import DisplayAppOrLoading from 'src/containers/DisplayAppOrLoading';
 import { loadingHomePage } from 'src/store/reducer';
 
-
-/**
- * Render - Rendu d'un composant React dans le DOM
- */
+// Provider du store de Redux pour l'application
 
 const rootComponent = <Provider store={store}><DisplayAppOrLoading /></Provider>;
 const target = document.getElementById('root');
-// 1 - Le composant à rendre
-// 2 - La cible dans le DOM
+
+// Render(Le composant à rendre, la cible dans le DOM)
+
 render(rootComponent, target);
+
+// dispatch de l'action permettant de récuperer un tableau contenant 2 chats
+
 store.dispatch(loadingHomePage());
