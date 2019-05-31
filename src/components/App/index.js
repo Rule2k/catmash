@@ -1,7 +1,7 @@
 // imports
 import React from 'react';
 
-import Cats from 'src/components/Cats';
+import Cats from 'src/containers/Cats';
 import { Divider, Grid, Segment } from 'semantic-ui-react';
 import './app.scss';
 
