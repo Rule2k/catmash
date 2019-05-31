@@ -2,30 +2,26 @@
  * Initial State
  */
 const initialState = {
-  message: 'Hello',
-  clic: 0,
+  data: [],
 };
 
 /**
  * Types
  */
-const DO_SOMETHING = 'DO_SOMETHING';
 
-/**
- * Traitements
- */
+const RECEIVED_TWO_RANDOM_CATS = 'RECEIVED_TWO_RANDOM_CATS';
+export const LOADING_HOMEPAGE = 'LOADING_HOMEPAGE';
 
 /**
  * Reducer
  */
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case DO_SOMETHING:
+    case RECEIVED_TWO_RANDOM_CATS:
       return {
         ...state,
-        clic: state.clic + 1,
+        data: action.data,
       };
-
     default:
       return state;
   }
@@ -34,15 +30,13 @@ const reducer = (state = initialState, action = {}) => {
 /**
  * Action Creators
  */
-export const doSomething = () => ({
-  type: DO_SOMETHING,
+export const twoCatsReceived = data => ({
+  type: RECEIVED_TWO_RANDOM_CATS,
+  data,
 });
 
-/**
- * Selectors
- */
+export const loadingHomePage = () => ({
+  type: LOADING_HOMEPAGE,
+});
 
-/**
- * Export
- */
 export default reducer;
