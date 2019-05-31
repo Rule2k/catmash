@@ -2,9 +2,9 @@
 import React from 'react';
 
 
-const Cats = () => (
+const Cats = ({ cat }) => (
   <div id="cats">
-    <p>Cats</p>
+    <img src={cat.url} alt="" />
   </div>
 );
 

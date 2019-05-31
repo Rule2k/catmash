@@ -3,6 +3,7 @@
  */
 const initialState = {
   data: [],
+  loading: true,
 };
 
 /**
@@ -21,6 +22,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         data: action.data,
+        loading: false,
       };
     default:
       return state;

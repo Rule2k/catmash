@@ -1,15 +1,7 @@
-/**
- * Npm import
- */
+
 import { connect } from 'react-redux';
 
-/**
- * Local import
- */
-import Example from 'src/components/Example';
-
-// Action Creators
-import { doSomething } from 'src/store/reducer';
+import DisplayAppOrLoading from 'src/components/DisplayAppOrLoading';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -19,8 +11,8 @@ import { doSomething } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  message: state.message,
-  clic: state.clic,
+  cats: state.data,
+  loading: state.loading,
 });
 
 /* === Actions ===
@@ -30,25 +22,15 @@ const mapStateToProps = (state, ownProps) => ({
  *  - ownProps : les props passées au container
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  doSomething: () => {
-    dispatch(doSomething());
-  },
-});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({});
 
 // Container
 // connect(Ce dont j'ai besoin)(Qui en a besoin)
-const ExampleContainer = connect(
+
+const DisplayAppOrLoadingContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Example);
+)(DisplayAppOrLoading);
 
-/* 2 temps
-const createContainer = connect(mapStateToProps, mapDispatchToProps);
-const ExampleContainer = createContainer(Example);
-*/
-
-/**
- * Export
- */
-export default ExampleContainer;
+export default DisplayAppOrLoadingContainer;
