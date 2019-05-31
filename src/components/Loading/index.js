@@ -1,8 +1,13 @@
 import React from 'react';
+import { Dimmer, Loader } from 'semantic-ui-react';
+import './loading.scss';
+
 
 const DisplayAppOrLoading = () => (
   <div id="loading">
-    <p>Loading !</p>
+    <Dimmer active inverted>
+      <Loader active inline />
+    </Dimmer>
   </div>
 );
 
