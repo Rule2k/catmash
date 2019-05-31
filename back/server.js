@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // Connection à mongoose
 
 mongoose.connect('mongodb://localhost/catmash');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8060;
 
 // Message de test de la homepage
 app.get('/', (req, res) => res.send('Hello Catmash'));
