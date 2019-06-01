@@ -1,10 +1,10 @@
 // imports
 import React from 'react';
 
-import Cats from 'src/containers/Cats';
-import {
-  Divider, Grid, Segment, Header, Button
-} from 'semantic-ui-react';
+import Homepage from 'src/components/Homepage';
+import NotFound from 'src/components/NotFound';
+import Rating from 'src/components/Rating';
+import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
@@ -13,18 +13,17 @@ import './app.scss';
 
 const App = ({ cats }) => (
   <div id="app">
-    <Header as="h1">Qui qui le plus beau ?</Header>
-    <Segment>
-      <Grid columns={2}>
-        {cats.map(cat => (
-          <Grid.Column key={cat.id}>
-            <Cats cat={cat} key={cat.id} />
-          </Grid.Column>
-        ))}
-      </Grid>
-      <Divider vertical>ou</Divider>
-    </Segment>
-    <Button>Découvrez le classement général de qui qui le plus beau</Button>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={() => (
+          <Homepage cats={cats} />
+        )}
+      />
+      <Route exact path="/classement" component={Rating} />
+      <Route component={NotFound} />
+    </Switch>
   </div>
 );
 

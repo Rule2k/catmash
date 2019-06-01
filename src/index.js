@@ -8,10 +8,18 @@ import { Provider } from 'react-redux';
 import store from 'src/store';
 import DisplayAppOrLoading from 'src/containers/DisplayAppOrLoading';
 import { loadingHomePage } from 'src/store/reducer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Provider du store de Redux pour l'application
 
-const rootComponent = <Provider store={store}><DisplayAppOrLoading /></Provider>;
+const rootComponent = (
+  <Router>
+    <Provider store={store}>
+      <DisplayAppOrLoading />
+    </Provider>
+  </Router>
+);
+
 const target = document.getElementById('root');
 
 // Render(Le composant à rendre, la cible dans le DOM)
