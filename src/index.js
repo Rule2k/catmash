@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import store from 'src/store';
 import DisplayAppOrLoading from 'src/containers/DisplayAppOrLoading';
-import { loadingHomePage } from 'src/store/reducer';
+import { loadingHomePage,loadingRatings } from 'src/store/reducer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Provider du store de Redux pour l'application
@@ -29,3 +29,4 @@ render(rootComponent, target);
 // dispatch de l'action permettant de récuperer un tableau contenant 2 chats
 
 store.dispatch(loadingHomePage());
+store.dispatch(loadingRatings());

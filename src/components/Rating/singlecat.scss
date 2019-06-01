@@ -1,0 +1,14 @@
+.singlecat {
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 5em;
+  width: 5em;
+  background-size: cover;
+  margin: 3em auto;
+  border-radius: 50%;
+}
+
+#listofcats {
+  display: flex;
+  flex-wrap: wrap;
+}

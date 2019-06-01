@@ -2,8 +2,10 @@
  * Initial State
  */
 const initialState = {
-  data: [],
-  loading: true,
+  twocats: [],
+  allcats: [],
+  loadingHomepage: true,
+  loadingRatings: true,
 };
 
 /**
@@ -11,7 +13,9 @@ const initialState = {
  */
 
 const RECEIVED_TWO_RANDOM_CATS = 'RECEIVED_TWO_RANDOM_CATS';
+const RECEIVED_ALL_CATS = 'RECEIVED_ALL_CATS';
 export const LOADING_HOMEPAGE = 'LOADING_HOMEPAGE';
+export const LOADING_RATINGS = 'LOADING_RATINGS';
 export const CAT_CLICKED = 'CAT_CLICKED';
 
 /**
@@ -22,8 +26,14 @@ const reducer = (state = initialState, action = {}) => {
     case RECEIVED_TWO_RANDOM_CATS:
       return {
         ...state,
-        data: action.data,
-        loading: false,
+        twocats: action.data,
+        loadingHomepage: false,
+      };
+    case RECEIVED_ALL_CATS:
+      return {
+        ...state,
+        allcats: action.data,
+        loadingRatings: false,
       };
     default:
       return state;
@@ -38,6 +48,11 @@ export const twoCatsReceived = data => ({
   data,
 });
 
+export const allCatsReceived = data => ({
+  type: RECEIVED_ALL_CATS,
+  data,
+});
+
 export const loadingHomePage = () => ({
   type: LOADING_HOMEPAGE,
 });
@@ -45,6 +60,10 @@ export const loadingHomePage = () => ({
 export const catHasBeenClicked = id => ({
   type: CAT_CLICKED,
   id,
+});
+
+export const loadingRatings = () => ({
+  type: LOADING_RATINGS,
 });
 
 export default reducer;

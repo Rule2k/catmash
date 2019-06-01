@@ -1,7 +1,6 @@
 
 import { connect } from 'react-redux';
-
-import DisplayAppOrLoading from 'src/components/DisplayAppOrLoading';
+import Rating from 'src/components/Rating';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -11,7 +10,7 @@ import DisplayAppOrLoading from 'src/components/DisplayAppOrLoading';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  loading: state.loadingHomepage,
+  allcats: state.allcats,
 });
 
 /* === Actions ===
@@ -27,9 +26,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({});
 // Container
 // connect(Ce dont j'ai besoin)(Qui en a besoin)
 
-const DisplayAppOrLoadingContainer = connect(
+const RatingContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DisplayAppOrLoading);
+)(Rating);
 
-export default DisplayAppOrLoadingContainer;
+export default RatingContainer;

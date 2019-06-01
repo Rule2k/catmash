@@ -6,8 +6,8 @@ import Loading from 'src/components/Loading';
 
 // si le statut loading est true, le composant de loading s'affiche, sinon l'application est chargée
 
-const DisplayAppOrLoading = ({ loading, cats }) => (
-  loading ? <Loading /> : <App cats={cats} />
+const DisplayAppOrLoading = ({ loading }) => (
+  loading ? <Loading /> : <App />
 );
 
 export default DisplayAppOrLoading;
