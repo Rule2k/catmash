@@ -5,7 +5,12 @@ const SingleCat = ({ singlecat }) => {
     backgroundImage: `url(${singlecat.url})`,
   };
   return (
-    <div className="singlecat" style={backgroundImage} />
+    <div>
+      <div className="singlecat" style={backgroundImage} />
+      <div>
+        Score : {singlecat.score}
+      </div>
+    </div>
   );
 };
 
