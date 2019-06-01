@@ -11,5 +11,4 @@ const Cats = ({ cat, catHasBeenClicked }) => {
   );
 };
 
-// <Image src={cat.url} width={400} height={400} circular centered onClick={handleClickOnCat} />
 export default Cats;
