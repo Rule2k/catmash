@@ -6,7 +6,7 @@ const url = 'http://localhost:8060/api';
 const ajaxMiddleware = store => next => (action) => {
   switch (action.type) {
     case LOADING_HOMEPAGE:
-      axios.get(`${url}/cats`, {
+      axios.get(`${url}/gettwocats`, {
       })
         .then((result) => {
           store.dispatch(twoCatsReceived(result.data.data));

@@ -7,7 +7,7 @@ const cats = require('./model');
 // Par la suite, je slice le tableau avec 2 entrées de moins que la taille totale du tableau (au cas où le nombre de data évolue)
 // Après avoir configuré la route, l'API me renverra donc uniquement deux entrées (au lieu du tableau entier), choisies au hasard, que le front-end utilisera plus tard pour afficher les deux images de chats.
 
-exports.index = (req, res) => {
+exports.getTwoCats = (req, res) => {
   cats.get((err, data) => {
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -28,6 +28,22 @@ exports.index = (req, res) => {
       status: 'Succès',
       message: 'Deux clés du tableau choisies au hasard',
       data: twoRandomEntries,
+    });
+  });
+};
+
+exports.getAllCats = (req, res) => {
+  cats.get((err, data) => {
+    if (err) {
+      res.json({
+        status: 'Erreur',
+        message: err,
+      });
+    }
+    res.json({
+      status: 'Succès',
+      message: 'Deux clés du tableau choisies au hasard',
+      data,
     });
   });
 };

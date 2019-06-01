@@ -14,8 +14,11 @@ router.get('/', (req, res) => {
 const catsController = require('./controller');
 
 // Routes
-router.route('/cats')
-  .get(catsController.index);
+router.route('/gettwocats')
+  .get(catsController.getTwoCats);
+
+router.route('/getallcats')
+  .get(catsController.getAllCats);
 
 // Export
 
