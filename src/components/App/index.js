@@ -11,7 +11,7 @@ import './app.scss';
 const App = ({ cats }) => (
   <div id="app">
     <Segment>
-      <Grid columns={2} relaxed="very">
+      <Grid columns={2}>
         {cats.map(cat => (
           <Grid.Column key={cat.id}>
             <Cats cat={cat} key={cat.id} />
