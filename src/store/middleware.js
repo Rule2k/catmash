@@ -19,7 +19,7 @@ const ajaxMiddleware = store => next => (action) => {
         });
       break;
     case LOADING_RATINGS:
-        console.log('loading ratings');
+      console.log('loading ratings');
       axios.get(`${url}/getallcats`, {
       })
         .then((result) => {

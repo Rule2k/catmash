@@ -3,11 +3,10 @@ import { NavLink } from 'react-router-dom';
 import {
   Header, Button,
 } from 'semantic-ui-react';
-import store from 'src/store';
 import SingleCat from './singlecat';
 import './singlecat.scss';
 
-const Rating = ({ allcats, loadingRatings }) => {
+const RatingPage = ({ allcats }) => {
   return (
     <div id="rating">
       <Header as="h1">Classement des qui qui le plus beau</Header>
@@ -24,4 +23,4 @@ const Rating = ({ allcats, loadingRatings }) => {
 };
 
 
-export default Rating;
+export default RatingPage;

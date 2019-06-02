@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import Rating from 'src/components/Rating';
+import RatingPage from 'src/components/RatingPage';
 import { loadingRatings } from 'src/store/reducer';
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -30,9 +30,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 // Container
 // connect(Ce dont j'ai besoin)(Qui en a besoin)
 
-const RatingContainer = connect(
+const RatingPageContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Rating);
+)(RatingPage);
 
-export default RatingContainer;
+export default RatingPageContainer;
