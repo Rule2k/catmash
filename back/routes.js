@@ -20,6 +20,9 @@ router.route('/gettwocats')
 router.route('/getallcats')
   .get(catsController.getAllCats);
 
+router.route('/updatescore')
+  .post(catsController.updateScore);
+
 // Export
 
 module.exports = router;

@@ -35,6 +35,15 @@ const ajaxMiddleware = store => next => (action) => {
       break;
     // vote pour un chat
     case CAT_CLICKED:
+        axios.post(`${url}/updatescore`, {
+          id: action.id,
+        })
+          .then((result) => {
+            console.log(result.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       console.log(action.id);
       break;
     default:
