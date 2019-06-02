@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 
 import store from 'src/store';
 import App from 'src/components/App';
-import { loadingHomePage, loadingRatings } from 'src/store/reducer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Provider du store de Redux pour l'application

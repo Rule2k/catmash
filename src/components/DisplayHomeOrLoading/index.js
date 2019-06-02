@@ -4,7 +4,7 @@ import React from 'react';
 import Homepage from 'src/containers/Homepage';
 import Loading from 'src/components/Loading';
 
-// si le statut loading est true, le composant de loading s'affiche, sinon l'application est chargée
+// si le statut loading est true, le composant de loading s'affiche, sinon la homepage est chargée
 
 class DisplayHomeOrLoading extends React.Component {
   componentDidMount() {

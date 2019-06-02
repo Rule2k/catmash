@@ -1,6 +1,5 @@
 // imports
 import React from 'react';
-import store from 'src/store';
 import Cats from 'src/containers/Cats';
 import {
   Divider, Grid, Segment, Header, Button,

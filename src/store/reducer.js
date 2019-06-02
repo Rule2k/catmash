@@ -28,12 +28,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         twocats: action.data,
         loadingHomepage: false,
+        loadingRatings: true,
       };
     case RECEIVED_ALL_CATS:
       return {
         ...state,
         allcats: action.data,
         loadingRatings: false,
+        loadingHomepage: true,
       };
     default:
       return state;

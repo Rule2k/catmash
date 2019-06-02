@@ -8,8 +8,9 @@ import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
-// Parcours le tableau "cats" issu de Redux, et génère un composant Cats pour chaques itérations,
-// en envoyant les détails de chaque entrée au composant enfant.
+// Composant dédié au routing via react-router-dom
+// 3 routes définis : "/" qui correspond à la homepage, /classement qui correspond au rating
+// et la page par défaut qui est la 404
 
 const App = () => (
   <div id="app">
