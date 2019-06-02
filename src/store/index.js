@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from 'src/store/reducer';
 import middleware from './middleware';
 
+// devtools
 
 const devTools = [
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

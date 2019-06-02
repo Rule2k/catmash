@@ -5,8 +5,11 @@ import {
 
 const url = 'http://localhost:8060/api';
 
+// middleware. Ces actions n'arrivent pas directement jusqu'au reducer mais sont destinés à l'API
+
 const ajaxMiddleware = store => next => (action) => {
   switch (action.type) {
+    // liste randomisé de 2 chats
     case LOADING_HOMEPAGE:
       console.log('loading homepage');
       axios.get(`${url}/gettwocats`, {
@@ -18,6 +21,7 @@ const ajaxMiddleware = store => next => (action) => {
           console.log(error);
         });
       break;
+    // liste de tous les chats
     case LOADING_RATINGS:
       console.log('loading ratings');
       axios.get(`${url}/getallcats`, {
@@ -29,6 +33,7 @@ const ajaxMiddleware = store => next => (action) => {
           console.log(error);
         });
       break;
+    // vote pour un chat
     case CAT_CLICKED:
       console.log(action.id);
       break;

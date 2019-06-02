@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 import './app.scss';
 
 // Composant dédié au routing via react-router-dom
-// 3 routes définis : "/" qui correspond à la homepage, /classement qui correspond au rating
+// 3 routes définies : "/" qui correspond à la homepage, /classement qui correspond au rating
 // et la page par défaut qui est la 404
 
 const App = () => (
