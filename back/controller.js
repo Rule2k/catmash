@@ -2,7 +2,7 @@
 
 const cats = require('./model');
 
-// Actions permettant de récupérer les données de la BDD. L'action get va être exportée et utilisé dans le fichier routes.js par la suite. 
+// Action permettant de récupérer les données de la BDD. L'action getTwoCats va être exportée et utilisé dans le fichier routes.js par la suite. 
 // La fonction shuffleArray permet de randomiser l'ordre du tableau de données issu de la base de données.
 // Par la suite, je slice le tableau avec 2 entrées de moins que la taille totale du tableau (au cas où le nombre de data évolue)
 // Après avoir configuré la route, l'API me renverra donc uniquement deux entrées (au lieu du tableau entier), choisies au hasard, que le front-end utilisera plus tard pour afficher les deux images de chats.
@@ -34,6 +34,8 @@ exports.getTwoCats = (req, res) => {
   });
 };
 
+// méthode permettant de récupérer toute la liste des chats
+
 exports.getAllCats = (req, res) => {
   cats.get((err, data) => {
     // tri les entrées par la valeur du score
@@ -51,6 +53,8 @@ exports.getAllCats = (req, res) => {
     });
   });
 };
+
+// méthode permettant d'identifier le chat qui a été cliqué côté front end, pour ensuite update son score
 
 exports.updateScore = (req, res) => {
   cats.findOne({ id: req.body.id }, (err, cat) => {

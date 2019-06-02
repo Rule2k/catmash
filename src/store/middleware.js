@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  LOADING_HOMEPAGE, twoCatsReceived, CAT_CLICKED, allCatsReceived, LOADING_RATINGS,
+  LOADING_HOMEPAGE, twoCatsReceived, CAT_CLICKED, allCatsReceived, LOADING_RATINGS, loadingHomePage,
 } from './reducer';
 
 const url = 'http://localhost:8060/api';
@@ -35,15 +35,16 @@ const ajaxMiddleware = store => next => (action) => {
       break;
     // vote pour un chat
     case CAT_CLICKED:
-        axios.post(`${url}/updatescore`, {
-          id: action.id,
+      axios.post(`${url}/updatescore`, {
+        // j'envoie son ID pour l'identifier côté back-end
+        id: action.id,
+      })
+        .then((result) => {
+          store.dispatch(loadingHomePage());
         })
-          .then((result) => {
-            console.log(result.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        .catch((error) => {
+          console.log(error);
+        });
       console.log(action.id);
       break;
     default:
