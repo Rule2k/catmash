@@ -40,6 +40,7 @@ const ajaxMiddleware = store => next => (action) => {
         id: action.id,
       })
         .then((result) => {
+          // je dispatche l'action loadingHomePage afin de récupérer deux nouveaux chats après avoir voté
           store.dispatch(loadingHomePage());
         })
         .catch((error) => {
