@@ -1,9 +1,9 @@
 // imports
 import React from 'react';
 
-import Homepage from 'src/containers/Homepage';
+import DisplayHomeOrLoading from 'src/containers/DisplayHomeOrLoading';
+import DisplayRatingsOrLoading from 'src/containers/DisplayRatingsOrLoading';
 import NotFound from 'src/components/NotFound';
-import Rating from 'src/containers/Rating';
 import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
@@ -14,14 +14,8 @@ import './app.scss';
 const App = () => (
   <div id="app">
     <Switch>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <Homepage />
-        )}
-      />
-      <Route exact path="/classement" component={Rating} />
+      <Route exact path="/" component={DisplayHomeOrLoading} />
+      <Route exact path="/classement" component={DisplayRatingsOrLoading} />
       <Route component={NotFound} />
     </Switch>
   </div>

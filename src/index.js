@@ -6,8 +6,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from 'src/store';
-import DisplayAppOrLoading from 'src/containers/DisplayAppOrLoading';
-import { loadingHomePage,loadingRatings } from 'src/store/reducer';
+import App from 'src/components/App';
+import { loadingHomePage, loadingRatings } from 'src/store/reducer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Provider du store de Redux pour l'application
@@ -15,7 +15,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const rootComponent = (
   <Router>
     <Provider store={store}>
-      <DisplayAppOrLoading />
+      <App />
     </Provider>
   </Router>
 );
@@ -27,6 +27,3 @@ const target = document.getElementById('root');
 render(rootComponent, target);
 
 // dispatch de l'action permettant de récuperer un tableau contenant 2 chats
-
-store.dispatch(loadingHomePage());
-store.dispatch(loadingRatings());

@@ -3,7 +3,7 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import './loading.scss';
 
 
-const DisplayAppOrLoading = () => (
+const Loading = () => (
   <div id="loading">
     <Dimmer active inverted>
       <Loader active inline />
@@ -12,4 +12,4 @@ const DisplayAppOrLoading = () => (
 );
 
 
-export default DisplayAppOrLoading;
+export default Loading;

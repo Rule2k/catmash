@@ -1,7 +1,7 @@
-
 import { connect } from 'react-redux';
+import { loadingRatings } from 'src/store/reducer';
 
-import DisplayAppOrLoading from 'src/components/DisplayAppOrLoading';
+import DisplayRatingsOrLoading from 'src/components/DisplayRatingsOrLoading';
 
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
@@ -11,7 +11,7 @@ import DisplayAppOrLoading from 'src/components/DisplayAppOrLoading';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  loading: state.loadingHomepage,
+  loading: state.loadingRatings,
 });
 
 /* === Actions ===
@@ -22,14 +22,18 @@ const mapStateToProps = (state, ownProps) => ({
  * Pas de disptach à transmettre ? const mapDispatchToProps = {};
  */
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  loadingRatings: () => {
+    dispatch(loadingRatings());
+  },
+});
 
 // Container
 // connect(Ce dont j'ai besoin)(Qui en a besoin)
 
-const DisplayAppOrLoadingContainer = connect(
+const DisplayRatingsOrLoadingContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DisplayAppOrLoading);
+)(DisplayRatingsOrLoading);
 
-export default DisplayAppOrLoadingContainer;
+export default DisplayRatingsOrLoadingContainer;

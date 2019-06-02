@@ -1,7 +1,8 @@
-
 import { connect } from 'react-redux';
-import Rating from 'src/components/Rating';
-import { loadingRatings } from 'src/store/reducer';
+import { loadingHomePage } from 'src/store/reducer';
+
+import DisplayHomeOrLoading from 'src/components/DisplayHomeOrLoading';
+
 /* === State (données) ===
  * - mapStateToProps retroune un objet de props pour le composant de présentation
  * - mapStateToProps met à dispo 2 params
@@ -10,7 +11,7 @@ import { loadingRatings } from 'src/store/reducer';
  * Pas de data à transmettre ? const mapStateToProps = null;
  */
 const mapStateToProps = (state, ownProps) => ({
-  allcats: state.allcats,
+  loading: state.loadingHomepage,
 });
 
 /* === Actions ===
@@ -22,17 +23,17 @@ const mapStateToProps = (state, ownProps) => ({
  */
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  loadingRatings: () => {
-    dispatch(loadingRatings());
+  loadingHomePage: () => {
+    dispatch(loadingHomePage());
   },
 });
 
 // Container
 // connect(Ce dont j'ai besoin)(Qui en a besoin)
 
-const RatingContainer = connect(
+const DisplayHomeOrLoadingContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Rating);
+)(DisplayHomeOrLoading);
 
-export default RatingContainer;
+export default DisplayHomeOrLoadingContainer;

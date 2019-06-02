@@ -8,6 +8,7 @@ const url = 'http://localhost:8060/api';
 const ajaxMiddleware = store => next => (action) => {
   switch (action.type) {
     case LOADING_HOMEPAGE:
+      console.log('loading homepage');
       axios.get(`${url}/gettwocats`, {
       })
         .then((result) => {
@@ -18,6 +19,7 @@ const ajaxMiddleware = store => next => (action) => {
         });
       break;
     case LOADING_RATINGS:
+        console.log('loading ratings');
       axios.get(`${url}/getallcats`, {
       })
         .then((result) => {

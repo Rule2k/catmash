@@ -1,6 +1,5 @@
 
 import { connect } from 'react-redux';
-import { loadingRatings } from 'src/store/reducer';
 import Homepage from 'src/components/Homepage';
 
 /* === State (données) ===
