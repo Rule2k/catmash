@@ -34,6 +34,7 @@ exports.getTwoCats = (req, res) => {
 
 exports.getAllCats = (req, res) => {
   cats.get((err, data) => {
+    const orderedEntries = data.sort((a, b) => b.score - a.score);
     if (err) {
       res.json({
         status: 'Erreur',
@@ -43,7 +44,7 @@ exports.getAllCats = (req, res) => {
     res.json({
       status: 'Succès',
       message: 'Deux clés du tableau choisies au hasard',
-      data,
+      data: orderedEntries,
     });
   });
 };
