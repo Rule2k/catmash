@@ -5,13 +5,10 @@ import middleware from './middleware';
 
 // devtools
 
-const devTools = [
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-];
 
 const appliedMiddlewares = applyMiddleware(middleware);
 
-const enhancers = compose(appliedMiddlewares, ...devTools);
+const enhancers = compose(appliedMiddlewares);
 
 // createStore
 
