@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // Connection à mongoose
 
-const mongoURI = 'mongodb://localhost:27017/catmash';
+const mongoURI = 'mongodb://95.142.173.247:27017/catmash';
 
 // mongoose.connect('mongodb://localhost:27017/catmash', { useNewUrlParser: true });
 
