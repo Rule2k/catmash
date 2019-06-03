@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost/catmash', { useNewUrlParser: true });
 const port = process.env.PORT || 8060;
 
 // Message de test de la homepage
-app.get('/', (req, res) => res.sendFile(__dirname + '../dist/index.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
 
 
 // Utilisation des routes de l'API
