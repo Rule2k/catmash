@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
+
 
 const apiRoutes = require('./routes');
 
@@ -25,7 +27,7 @@ mongoose.connect('mongodb://localhost/catmash', { useNewUrlParser: true });
 const port = process.env.PORT || 8060;
 
 // Message de test de la homepage
-app.get('/', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
+app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 
 
 // Utilisation des routes de l'API
