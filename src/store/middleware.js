@@ -3,7 +3,7 @@ import {
   LOADING_HOMEPAGE, twoCatsReceived, CAT_CLICKED, allCatsReceived, LOADING_RATINGS, loadingHomePage,
 } from './reducer';
 
-const url = 'http://localhost:8060/api';
+const url = 'http://95.142.173.247:8060/api';
 
 // middleware. Ces actions n'arrivent pas directement jusqu'au reducer mais sont destinés à l'API
 
