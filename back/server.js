@@ -22,15 +22,17 @@ app.use(bodyParser.json());
 
 // Connection à mongoose
 
-const mongoURI = 'mongodb://95.142.173.247:27017/catmash';
+const mongoURI = 'mongodb://127.0.0.1:27017/catmash';
+// const MongoDB = mongoose.connect(mongoURI).connection;
+// MongoDB.on('error', function(err) { console.log(err.message); });
+// MongoDB.once('open', function() {
+//   console.log("mongodb connection open");
+// });
 
-// mongoose.connect('mongodb://localhost:27017/catmash', { useNewUrlParser: true });
 
-const MongoDB = mongoose.connect(mongoURI).connection;
-MongoDB.on('error', function(err) { console.log(err.message); });
-MongoDB.once('open', function() {
-  console.log("mongodb connection open");
-});
+mongoose.connect(mongoURI, { useNewUrlParser: true });
+
+
 
 
 const port = process.env.PORT || 8060;
