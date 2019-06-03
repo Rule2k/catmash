@@ -22,7 +22,9 @@ app.use(bodyParser.json());
 
 // Connection à mongoose
 
-mongoose.connect('mongodb://95.142.173.247:27017/catmash', { useNewUrlParser: true });
+const mongoURI = 'mongodb://127.0.0.1:27017/catmash';
+
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 const port = process.env.PORT || 8060;
 
