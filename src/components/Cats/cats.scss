@@ -1,10 +1,11 @@
 .cats {
   background-position: center;
   background-repeat: no-repeat;
-  height: 30em;
-  width: 30em;
+  height: 20em;
+  width: 20em;
   background-size: cover;
-  margin: 3em auto;
+  margin: 1em auto;
+  border:  .5em solid white;
   border-radius: 50%;
   cursor: pointer;
 }

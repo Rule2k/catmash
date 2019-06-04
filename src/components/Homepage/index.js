@@ -1,29 +1,29 @@
 // imports
 import React from 'react';
 import Cats from 'src/containers/Cats';
-import {
-  Divider, Grid, Segment, Header, Button,
-} from 'semantic-ui-react';
+import Header from 'src/components/Header';
 import { NavLink } from 'react-router-dom';
+import './homepage.scss';
 
 // Parcours le tableau "cats" issu de Redux, et génère un composant Cats pour chaques itérations,
 // en envoyant les détails de chaque entrée au composant enfant.
 
 const Homepage = ({ cats }) => (
   <div id="homepage">
-    <Header as="h1">Qui qui le plus beau ?</Header>
-    <Segment>
-      <Grid columns={2}>
-        {cats.map(cat => (
-          <Grid.Column key={cat.id}>
-            <Cats cat={cat} key={cat.id} />
-          </Grid.Column>
-        ))}
-      </Grid>
-      <Divider id="divider" vertical>VS</Divider>
-    </Segment>
+    <Header />
+    <div id="segment-homepage">
+      {cats.map(cat => (
+        <Cats cat={cat} key={cat.id} />
+      ))}
+    </div>
+    <div id="divider">
+        VS
+    </div>
     <NavLink exact to="/classement">
-      <Button>Découvrez le classement général de qui qui le plus beau</Button>
+      <div className="button">
+        <p>Découvrez le classement général</p>
+        <p>de qui qui le plus beau</p>
+      </div>
     </NavLink>
   </div>
 );
