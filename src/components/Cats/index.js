@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './cats.scss';
 
 const Cats = ({ cat, catHasBeenClicked }) => {
@@ -10,5 +11,15 @@ const Cats = ({ cat, catHasBeenClicked }) => {
     <div className="cats" style={backgroundImage} onClick={handleClickOnCat} />
   );
 };
+
+Cats.propTypes = {
+  cat: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+  }).isRequired,
+  catHasBeenClicked: PropTypes.func.isRequired,
+};
+
 
 export default Cats;

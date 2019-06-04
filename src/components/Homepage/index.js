@@ -1,5 +1,6 @@
 // imports
 import React from 'react';
+import PropTypes from 'prop-types';
 import Cats from 'src/containers/Cats';
 import Header from 'src/components/Header';
 import { NavLink } from 'react-router-dom';
@@ -27,5 +28,14 @@ const Homepage = ({ cats }) => (
     </NavLink>
   </div>
 );
+
+Homepage.propTypes = {
+  cats: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+  }).isRequired).isRequired,
+};
+
 
 export default Homepage;
