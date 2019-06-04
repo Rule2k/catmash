@@ -8,7 +8,9 @@ const Cats = ({ cat, catHasBeenClicked }) => {
     backgroundImage: `url(${cat.url})`,
   };
   return (
-    <div className="cats" style={backgroundImage} onClick={handleClickOnCat} />
+    <div className="cats-container">
+      <div className="cats" style={backgroundImage} onClick={handleClickOnCat} />
+    </div>
   );
 };
 

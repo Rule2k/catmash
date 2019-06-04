@@ -11,7 +11,6 @@ const ajaxMiddleware = store => next => (action) => {
   switch (action.type) {
     // liste randomisé de 2 chats
     case LOADING_HOMEPAGE:
-      console.log('loading homepage');
       axios.get(`${url}/gettwocats`, {
       })
         .then((result) => {
@@ -23,7 +22,6 @@ const ajaxMiddleware = store => next => (action) => {
       break;
     // liste de tous les chats
     case LOADING_RATINGS:
-      console.log('loading ratings');
       axios.get(`${url}/getallcats`, {
       })
         .then((result) => {
@@ -46,7 +44,6 @@ const ajaxMiddleware = store => next => (action) => {
         .catch((error) => {
           console.log(error);
         });
-      console.log(action.id);
       break;
     default:
       next(action);
