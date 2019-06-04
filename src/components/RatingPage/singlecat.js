@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SingleCat = ({ singlecat }) => {
   const backgroundImage = {
@@ -12,6 +13,14 @@ const SingleCat = ({ singlecat }) => {
       </div>
     </div>
   );
+};
+
+SingleCat.propTypes = {
+  singlecat: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 
