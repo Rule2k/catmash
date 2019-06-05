@@ -11,7 +11,7 @@ const apiRoutes = require('./routes');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:8080' }));
+app.use(cors({ origin: 'http://95.142.173.247:8080' }));
 
 // BodyParser pour gérer les requêtes POST
 
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // Connection à mongoose
 
-const mongoURI = 'mongodb://95.142.173.247/catmash';
+const mongoURI = 'mongodb://127.0.0.1:27017/catmash';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 
