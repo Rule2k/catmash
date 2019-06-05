@@ -2,12 +2,16 @@
   padding: 2em;
   text-align: center;
   width: 1200px;
-  margin: auto;
+  margin: 2em auto;
+  background: linear-gradient(90deg, rgba(255, 255, 255, .15) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 0 0 2em 2em;
+  border: 1.5pt dashed rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 2px 5px 1px #0000002d;
 }
 
 body {
   color: rgb(255, 255, 255);
   background: rgb(160,51,255);
-  background: linear-gradient(0deg, rgba(160,51,255,1) 0%, rgba(115,0,255,1) 100%);
+  background: linear-gradient(90deg, rgba(160,51,255,1) 25%, rgba(115,0,255,1) 75%);
     font-family: 'Raleway', sans-serif;
 }

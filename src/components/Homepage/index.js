@@ -11,12 +11,12 @@ import './homepage.scss';
 const Homepage = ({ cats }) => {
   // Parcours le tableau "cats" issu de Redux, et génère un composant Cats pour chaques itérations,
   // en envoyant les détails de chaque entrée au composant enfant.
-  // ajoute ensuite le divider dans ce tableau afin de le mettre au milieu
+  // ajoute ensuite le divider dans ce tableau afin de le mettre au milieu des deux chats
   const elements = [];
-  cats.map((cat, index) => (
-    elements.push(<Cats cat={cat} key={cat.id} index={index} />)
+  cats.map(cat => (
+    elements.push(<Cats cat={cat} key={cat.id} />)
   ));
-  elements.splice(1, 0, <Divider />);
+  elements.splice(1, 0, <Divider key="divider" />);
   return (
     <div id="homepage">
       <Header />
