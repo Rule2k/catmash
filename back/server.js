@@ -31,11 +31,7 @@ const port = process.env.PORT || 8060;
 // Liaison des fichiers & routes
 
 app.use(express.static(path.resolve('dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: path.join(__dirname, 'dist/') });
-});
-// app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
+app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 
 // Utilisation des routes de l'API
 app.use('/api', apiRoutes);
