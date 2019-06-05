@@ -11,7 +11,7 @@ const apiRoutes = require('./routes');
 
 const app = express();
 
-app.use(cors({ origin: 'http://95.142.173.247:8060' }));
+app.use(cors({ origin: 'http://localhost:8080' }));
 
 // BodyParser pour gérer les requêtes POST
 
@@ -22,17 +22,18 @@ app.use(bodyParser.json());
 
 // Connection à mongoose
 
-const mongoURI = 'mongodb://127.0.0.1:27017/catmash';
+const mongoURI = 'mongodb://95.142.173.247/catmash';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 const port = process.env.PORT || 8060;
 
-// Message de test de la homepage
+// Liaison des fichiers & routes
 app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
-app.get('/app.css', (req, res) => res.sendFile(path.resolve('dist/app.css')));
-app.get('/vendors.js', (req, res) => res.sendFile(path.resolve('dist/vendors.js')));
-app.get('/app.js', (req, res) => res.sendFile(path.resolve('dist/app.js')));
+// app.get('/app.css', (req, res) => res.sendFile(path.resolve('dist/app.css')));
+// app.get('/vendors.js', (req, res) => res.sendFile(path.resolve('dist/vendors.js')));
+// app.get('/app.js', (req, res) => res.sendFile(path.resolve('dist/app.js')));
+app.use(express.static(path.join(__dirname, '/../dist')));
 
 // Utilisation des routes de l'API
 app.use('/api', apiRoutes);
