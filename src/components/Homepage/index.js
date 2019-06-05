@@ -33,9 +33,6 @@ const Homepage = ({ cats }) => {
   );
 };
 
-// Parcours le tableau "cats" issu de Redux, et génère un composant Cats pour chaques itérations,
-// en envoyant les détails de chaque entrée au composant enfant.
-
 Homepage.propTypes = {
   cats: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,

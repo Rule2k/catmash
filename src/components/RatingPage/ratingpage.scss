@@ -1,14 +1,40 @@
-.singlecat {
+.img-of-cat {
   background-position: center;
   background-repeat: no-repeat;
   height: 5em;
   width: 5em;
   background-size: cover;
   border-radius: 50%;
+  border: .1em solid white;
+  margin-bottom: 1em;
 }
 
 #listofcats {
   display: flex;
   flex-wrap: wrap;
+  font-weight: bold;
+  margin-bottom: 3em;
+  justify-content: center;
 }
 
+#rating {
+  display: flex;
+  flex-direction: column;
+  & a {
+    margin: auto;
+    width: 40%;
+  }
+}
+
+.score {
+  margin-top: -.5em;
+  color: black;
+  & p:nth-child(2) {
+    font-size: 2em;
+    color: white;
+  }
+}
+
+.singlecat {
+  margin: 1em;
+}

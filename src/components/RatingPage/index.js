@@ -3,20 +3,21 @@ import { NavLink } from 'react-router-dom';
 import Header from 'src/components/Header';
 import PropTypes from 'prop-types';
 
-import { Segment } from 'semantic-ui-react';
 import SingleCat from './singlecat';
 import './ratingpage.scss';
 
 const RatingPage = ({ allcats }) => (
   <div id="rating">
     <Header />
-    <Segment id="listofcats">
+    <div id="listofcats">
       {allcats.map(singlecat => (
         <SingleCat singlecat={singlecat} key={singlecat.id} />
       ))}
-    </Segment>
+    </div>
     <NavLink exact to="/">
-      <div className="button">Retourner à l'accueil</div>
+      <div className="button">
+        <p>Retourner à l'accueil</p>
+      </div>
     </NavLink>
   </div>
 );

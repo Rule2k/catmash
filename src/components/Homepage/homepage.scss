@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 3em;
 }
 
 .button {
@@ -27,9 +28,8 @@
   display: flex;
   flex-direction: column;
   & a {
-    margin: 3em auto;
+    margin: auto;
     width: 40%;
-    
   }
 }
 
@@ -37,12 +37,10 @@
 #divider {
   font-family: 'Permanent Marker', cursive;
   color: black;
-  // text-shadow: 2px 2px 1px #0000002d;
   & #cat-face {
     margin: auto;
     width: 150px;
     fill: black;
-    // filter: drop-shadow(2px 2px 1px #0000002d);
   }
 }
 
@@ -50,7 +48,4 @@
   display: flex;
   color: white;
   font-size: 10em;
-  // & p:nth-child(2) {
-  //   color: white;
-  // }
 }
