@@ -11,7 +11,7 @@ const apiRoutes = require('./routes');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:8060' }));
+app.use(cors({ origin: 'http://95.142.173.247:8060' }));
 
 // BodyParser pour gérer les requêtes POST
 
