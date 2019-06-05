@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Divider from './Divider';
 import './cats.scss';
 
-const Cats = ({ cat, catHasBeenClicked }) => {
+const Cats = ({ cat, catHasBeenClicked, index }) => {
   const handleClickOnCat = () => (catHasBeenClicked(cat.id));
   const backgroundImage = {
     backgroundImage: `url(${cat.url})`,
   };
   return (
-    <div className="cats-container">
-      <div className="cats" style={backgroundImage} onClick={handleClickOnCat} />
-    </div>
+    <div className="cats" style={backgroundImage} onClick={handleClickOnCat} />
   );
 };
 
