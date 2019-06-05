@@ -29,10 +29,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true });
 const port = process.env.PORT || 8060;
 
 // Liaison des fichiers & routes
-app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
-// app.get('/app.css', (req, res) => res.sendFile(path.resolve('dist/app.css')));
-// app.get('/vendors.js', (req, res) => res.sendFile(path.resolve('dist/vendors.js')));
-// app.get('/app.js', (req, res) => res.sendFile(path.resolve('dist/app.js')));
+app.get('*', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 app.use(express.static(path.join(__dirname, '/../dist')));
 
 // Utilisation des routes de l'API
