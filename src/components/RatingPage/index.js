@@ -9,6 +9,7 @@ import './ratingpage.scss';
 const RatingPage = ({ allcats }) => (
   <div id="rating">
     <Header />
+    <h1>Classement global :</h1>
     <div id="listofcats">
       {allcats.map(singlecat => (
         <SingleCat singlecat={singlecat} key={singlecat.id} />

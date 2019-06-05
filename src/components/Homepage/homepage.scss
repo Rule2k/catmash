@@ -7,20 +7,19 @@
 
 .button {
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: white;
   text-transform: uppercase;
-  background: #ffffff;
+  background: black;
   font-size: 1.2em;
   padding: 1em;
-  border: .2em solid rgba(255, 255, 255, 0);
+  border: .2em solid rgba(255, 255, 255, 1);
   border-radius: 5px;
   box-shadow: 2px 2px 5px 1px #0000002d;
   transition: all .1s ease-in 0s;
   &:hover {
-    color: #ffffff;
-    background: black;
-    border: 4px solid white;
-    transform: scale(1.05);
+    color: black;
+    background: white;
+    border: .2em solid rgb(0, 0, 0);
   }
 }
 
@@ -36,16 +35,14 @@
 
 #divider {
   font-family: 'Permanent Marker', cursive;
-  color: black;
   & #cat-face {
     margin: auto;
     width: 150px;
-    fill: black;
   }
 }
 
 #versus {
   display: flex;
-  color: white;
+  color: black;
   font-size: 10em;
 }
