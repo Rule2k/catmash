@@ -32,7 +32,7 @@ const port = process.env.PORT || 8060;
 // app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 
 app.use(express.static(path.resolve('dist')));
-app.get('*', (req, res) => res.sendFile(path.resolve('dist/index.html')));
+app.get('/*', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 // app.get('/', (req, res) => res.sendFile(path.resolve('dist/index.html')));
 
 
